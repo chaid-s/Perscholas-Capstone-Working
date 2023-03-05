@@ -1,5 +1,6 @@
 package com.perscholas.CardAdvantage.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
@@ -8,6 +9,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -30,10 +32,8 @@ public class Cart {
 	@OneToOne(mappedBy = "cart", targetEntity = User.class)
 	private User user;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "cart_userproduct_id", referencedColumnName = "id")
-	private CartUserProduct cartuserproduct;
+	@OneToMany(mappedBy = "cart")
+	private List<UserProduct> userProducts = new ArrayList<>();
 	
-	//wefwefwef
-
+	
 }

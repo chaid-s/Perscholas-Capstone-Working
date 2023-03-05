@@ -33,9 +33,9 @@ public class UserProduct {
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="productid")
 	private Product product;
-	@ManyToOne
-    @JoinColumn(name="cartuserproductid")
-	private CartUserProduct cartuserproduct;
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="cartid")
+	private Cart cart;
 	@Basic(fetch = FetchType.LAZY)
     private byte[] verificationPicture;
 	
