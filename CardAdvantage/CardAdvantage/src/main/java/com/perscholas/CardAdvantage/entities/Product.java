@@ -36,6 +36,7 @@ public class Product {
 	private Long id;
 	@Column(nullable = false)
 	private String name;
+	private String description;
 	@Lob
     @Basic(fetch = FetchType.LAZY)
     private byte[] productPicture;

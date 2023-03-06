@@ -24,5 +24,13 @@ public class ProductController {
 		model.addAttribute("products", products);
 		return "/admin/products";
 	}
+	
+	//handler for new products
+	@GetMapping("admin/products/newproduct")
+	public String newProductForm(Model model) {
+		ProductDto productDto = new ProductDto();
+		model.addAttribute("product",productDto);
+		return "admin/create_product";
+	}
 
 }

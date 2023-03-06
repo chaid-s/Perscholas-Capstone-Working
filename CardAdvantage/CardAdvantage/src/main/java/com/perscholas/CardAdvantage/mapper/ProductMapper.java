@@ -9,6 +9,7 @@ public class ProductMapper {
 		return ProductDto.builder()
 			   .id(product.getId())
 			   .name(product.getName())
+			   .description(product.getDescription())
 			   .productPicture(product.getProductPicture())
 			   .build();
 		
@@ -19,6 +20,7 @@ public class ProductMapper {
 		return Product.builder()
 				.id(productDto.getId())
 				.name(productDto.getName())
+				.description(null)
 				.productPicture(productDto.getProductPicture())
 				.build();
 	}

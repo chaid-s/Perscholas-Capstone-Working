@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en"
+	xmlns:th="http://www.thymeleaf.org"
+>
+
+<div th:replace="admin/header :: header"></div>
+
+<body>
+
+<div th:replace="admin/header :: navbar"></div>
+
+<div class="container">
+	<div class="row col-md-8 offset-md-2">
+		<div class="card">
+			<div class="card-header">
+				<h2 class ="text-center">Create Product</h2>
+			</div>
+			<div class="card-body">
+				<form role="form" method="post" th:action="@{/admin/products}" th:objects="${product}">
+					<div class="mb-3">
+						<label class="form-label">Name</label>
+							<input
+								type="text"
+								class="form-control"
+								id="name"
+								placeholder="Enter product name"
+								name="name"
+								th:field="*{name}"
+							/>
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Short Description</label>
+						<textarea
+								class="form-control"
+								id="description"
+								placeholder="Enter product description"
+								rows="3"
+								name="description"
+								th:field="*{description}"
+						>
+						</textarea>
+					</div>
+
+										
+					<button type="submit" class="btn btn-primary">Submit</button>
+					
+				</form> 
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
