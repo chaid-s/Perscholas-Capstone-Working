@@ -27,4 +27,29 @@ public class ProductServiceImpl implements ProductService{
 				.collect(Collectors.toList());
 	}
 
+	@Override
+	public void createProduct(ProductDto productDto) {
+		Product product = ProductMapper.mapToProduct(productDto);
+		productRepository.save(product);
+	}
+
+	@Override
+	public ProductDto findProductById(Long productId) {
+		Product product = productRepository.findById(productId).get();
+		return ProductMapper.mapToProductDto(product);
+	}
+
+	@Override
+	public void updateProduct(ProductDto productDto) {
+		Product product = ProductMapper.mapToProduct(productDto);
+		productRepository.save(product);
+	}
+
+	@Override
+	public void deleteProduct(Long productId) {
+		productRepository.deleteById(productId);
+	}
+	
+	
+
 }

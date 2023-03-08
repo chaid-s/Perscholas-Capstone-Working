@@ -13,10 +13,11 @@
 	<div class="row col-md-8 offset-md-2">
 		<div class="card">
 			<div class="card-header">
-				<h2 class ="text-center">Create Product</h2>
+				<h2 class ="text-center">Edit Product</h2>
 			</div>
 			<div class="card-body">
 				<form role="form" method="post" th:action="@{/admin/products}" th:object="${product}">
+					<input type="hidden" th:field="*{id}">
 					<div class="mb-3">
 						<label class="form-label">Name</label>
 							<input

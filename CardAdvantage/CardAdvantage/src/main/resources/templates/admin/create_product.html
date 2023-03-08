@@ -16,7 +16,7 @@
 				<h2 class ="text-center">Create Product</h2>
 			</div>
 			<div class="card-body">
-				<form role="form" method="post" th:action="@{/admin/products}" th:objects="${product}">
+				<form role="form" method="post" th:action="@{/admin/products}" th:object="${product}">
 					<div class="mb-3">
 						<label class="form-label">Name</label>
 							<input
@@ -27,6 +27,8 @@
 								name="name"
 								th:field="*{name}"
 							/>
+						 <p th:if="${#fields.hasErrors('name')}" class="text-danger"
+						 th:errors="*{name}"></p>
 					</div>
 					<div class="mb-3">
 						<label class="form-label">Short Description</label>
@@ -39,16 +41,15 @@
 								th:field="*{description}"
 						>
 						</textarea>
-					</div>
-
-										
+						<p th:if="${#fields.hasErrors('description')}" class="text-danger"
+						 th:errors="*{description}"></p>
+					</div>					
 					<button type="submit" class="btn btn-primary">Submit</button>
-					
 				</form> 
 			</div>
 		</div>
 	</div>
 </div>
-
+<div th:replace="admin/footer :: footer"></div>
 </body>
 </html>

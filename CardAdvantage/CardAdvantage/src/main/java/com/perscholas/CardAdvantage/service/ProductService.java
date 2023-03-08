@@ -8,4 +8,11 @@ public interface ProductService {
 	
 	List<ProductDto> findAllProducts();
 	
+	void createProduct(ProductDto productDto);
+	
+	ProductDto findProductById(Long productId);
+	
+	void updateProduct(ProductDto productDto);
+	
+	void deleteProduct(Long productId);
 }

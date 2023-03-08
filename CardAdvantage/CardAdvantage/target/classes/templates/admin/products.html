@@ -25,9 +25,13 @@
 			<tr th:each = "product, productStat : ${products}">
 				<td th:text="${productStat.count}">1</td>
 				<td th:text="${product.name}">product name</td>
-				<td th:text="${product.description}">product description</td>>
+				<td th:text="${product.description}">product description</td>
 				<td id="Image-Cell">
 					<img alt="Product Image" th:src="${product.productPicture}">
+				</td>
+				<td>
+					<a th:href="@{/admin/products/{productId}/edit(productId=${product.id})}" class="btn btn-primary">Edit</a>
+					<a th:href="@{/admin/products/{productId}/delete(productId=${product.id})}" class="btn btn-danger">Delete</a>
 				</td>
 			</tr> 
 		</tbody>	
