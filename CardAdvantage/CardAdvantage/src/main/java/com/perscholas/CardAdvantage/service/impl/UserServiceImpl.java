@@ -2,6 +2,7 @@ package com.perscholas.CardAdvantage.service.impl;
 
 import java.util.Arrays;
 
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.perscholas.CardAdvantage.dto.RegistrationDto;
@@ -16,10 +17,12 @@ public class UserServiceImpl implements UserService{
 	
 	private UserRepository userRepository;
 	private RoleRepository roleRepository;
-
-	public UserServiceImpl(UserRepository userRepository, RoleRepository roleRepository) {
+	private PasswordEncoder passwordEncoder;
+	
+	public UserServiceImpl(UserRepository userRepository, RoleRepository roleRepository, PasswordEncoder passwordEncoder) {
 		this.userRepository = userRepository;
 		this.roleRepository = roleRepository;
+		this.passwordEncoder = passwordEncoder;
 	}
 
 	@Override
@@ -28,7 +31,7 @@ public class UserServiceImpl implements UserService{
 		user.setUName(registrationDto.getUName());
 		user.setEmail(registrationDto.getEmail());
 		//Do password encryption after security is properly implemented
-		user.setPassword(registrationDto.getPassword());
+		user.setPassword(passwordEncoder.encode(registrationDto.getPassword()));
 		Role role = roleRepository.findByName("ROLE_GUEST");
 		user.setRoles(Arrays.asList(role));
 		userRepository.save(user);
@@ -37,6 +40,11 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public User findByEmail(String email) {
 		return userRepository.findByEmail(email);
+	}
+
+	@Override
+	public User findByUsername(String userName) {
+		return userRepository.findByuName(userName);
 	}
 	
 	

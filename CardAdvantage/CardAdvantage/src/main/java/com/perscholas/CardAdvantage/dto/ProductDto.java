@@ -20,6 +20,6 @@ public class ProductDto {
 	@NotEmpty(message ="Product Description is Required")
 	private String description;
 	
-	private byte[] productPicture;
+	private String productPicture;
 
 }

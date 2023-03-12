@@ -16,8 +16,9 @@
 				<h2 class ="text-center">Edit Product</h2>
 			</div>
 			<div class="card-body">
-				<form role="form" method="post" th:action="@{/admin/products}" th:object="${product}">
+				<form role="form" method="post" th:action="@{/admin/products}" th:object="${product}" enctype="multipart/form-data">
 					<input type="hidden" th:field="*{id}">
+					<input type="hidden" th:field="*{productPicture}">
 					<div class="mb-3">
 						<label class="form-label">Name</label>
 							<input
@@ -44,9 +45,15 @@
 						</textarea>
 						<p th:if="${#fields.hasErrors('description')}" class="text-danger"
 						 th:errors="*{description}"></p>
-					</div>					
+					</div>
+					<div>
+						<div class="mb-3">
+						<label class="form-label">Upload Picture</label>
+							<input type="file" name="file" class="custom-file-input">
+						</div>
+					</div>			
 					<button type="submit" class="btn btn-primary">Submit</button>
-				</form> 
+				</form>
 			</div>
 		</div>
 	</div>

@@ -27,11 +27,12 @@
 				<td th:text="${product.name}">product name</td>
 				<td th:text="${product.description}">product description</td>
 				<td id="Image-Cell">
-					<img alt="Product Image" th:src="${product.productPicture}">
+					<img alt="Product Image" th:src="*{'data:image/jpeg;base64,'+{product.productPicture}}" style="width:100px; height:100px;">
 				</td>
 				<td>
 					<a th:href="@{/admin/products/{productId}/edit(productId=${product.id})}" class="btn btn-primary">Edit</a>
 					<a th:href="@{/admin/products/{productId}/delete(productId=${product.id})}" class="btn btn-danger">Delete</a>
+					<a th:href="@{/admin/products/{productId}/view(productId=${product.id})}" class="btn btn-danger">View</a>
 				</td>
 			</tr> 
 		</tbody>	

@@ -6,4 +6,6 @@ import com.perscholas.CardAdvantage.entities.User;
 
 public interface UserRepository extends JpaRepository<User, Long>{
 	User findByEmail(String Email);
+	
+	User findByuName(String uName);
 }

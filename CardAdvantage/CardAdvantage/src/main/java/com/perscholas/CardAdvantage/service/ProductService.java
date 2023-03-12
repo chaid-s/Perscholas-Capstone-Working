@@ -2,6 +2,8 @@ package com.perscholas.CardAdvantage.service;
 
 import java.util.List;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import com.perscholas.CardAdvantage.dto.ProductDto;
 
 public interface ProductService {

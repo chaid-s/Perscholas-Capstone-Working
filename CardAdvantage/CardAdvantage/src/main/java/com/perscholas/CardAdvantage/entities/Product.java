@@ -39,7 +39,8 @@ public class Product {
 	private String description;
 	@Lob
     @Basic(fetch = FetchType.LAZY)
-    private byte[] productPicture;
+	@Column(columnDefinition = "LONGBLOB")
+    private String productPicture;
 	
 	@OneToMany(mappedBy = "product")
 	private List<UserProduct> userProducts = new ArrayList<>();
