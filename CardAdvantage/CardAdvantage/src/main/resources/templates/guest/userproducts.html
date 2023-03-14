@@ -3,13 +3,11 @@
 	xmlns:th="http://www.thymeleaf.org"
 >
 
-<div th:replace="admin/header :: header"></div>
+<div th:replace="guest/header :: header"></div>
 
 <body>
 
-<div th:replace="admin/header :: navbar"></div>
-
-	<div class="container">
+<div class="container">
 		<div class="row">
 			<h1>List of Products</h1>
 		</div>
@@ -44,14 +42,12 @@
 					<img alt="Product Image" th:src="*{'data:image/jpeg;base64,'+{product.productPicture}}" style="width:100px; height:100px;">
 				</td>
 				<td>
-					<a th:href="@{/admin/products/{productId}/edit(productId=${product.id})}" class="btn btn-primary">Edit</a>
-					<a th:href="@{/admin/products/{productId}/delete(productId=${product.id})}" class="btn btn-danger">Delete</a>
 					<a th:href="@{/admin/products/{productId}/view(productId=${product.id})}" class="btn btn-danger">View</a>
 				</td>
 			</tr> 
 		</tbody>	
 	</table>	
 </div>
-<div th:replace="admin/footer :: footer"></div>
+<div th:replace="guest/footer :: footer"></div>
 </body>
 </html>

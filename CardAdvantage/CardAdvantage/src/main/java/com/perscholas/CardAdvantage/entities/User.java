@@ -47,12 +47,5 @@ public class User {
 	)
 	private List<Role> roles = new ArrayList<>();
 	
-	@OneToMany(mappedBy = "user")
-	private List<UserProduct> userProducts = new ArrayList<>();
-	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="cart_id", referencedColumnName = "id")
-	private Cart cart;
-	
 
 }

@@ -42,7 +42,5 @@ public class Product {
 	@Column(columnDefinition = "LONGBLOB")
     private String productPicture;
 	
-	@OneToMany(mappedBy = "product")
-	private List<UserProduct> userProducts = new ArrayList<>();
 	
 }

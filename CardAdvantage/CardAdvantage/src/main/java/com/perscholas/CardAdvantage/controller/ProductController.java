@@ -104,6 +104,15 @@ public class ProductController {
 		return "admin/view_product";
 	}
 	
+	//handler for searching products
+	@GetMapping("/admin/products/search")
+	public String searchProducts(@RequestParam(value="query") String query, Model model) 
+	{
+		List<ProductDto> products = productService.searchProducts(query);
+		model.addAttribute("products", products);
+		return "admin/products";
+	}
+	
 	
 
 }

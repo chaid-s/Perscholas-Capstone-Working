@@ -29,11 +29,5 @@ public class Cart {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@OneToOne(mappedBy = "cart", targetEntity = User.class)
-	private User user;
-	
-	@OneToMany(mappedBy = "cart")
-	private List<UserProduct> userProducts = new ArrayList<>();
-	
 	
 }

@@ -9,5 +9,5 @@ import com.perscholas.CardAdvantage.entities.UserProduct;
 
 public interface UserProductRepository extends JpaRepository<UserProduct, Long>{
 	
-	Optional<UserProduct> findByUserId(Long id);
+	Optional<UserProduct> findById(Long id);
 }

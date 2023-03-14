@@ -36,6 +36,7 @@ public class WebSpringSecurity {
 					.requestMatchers(new AntPathRequestMatcher("/register/**")).permitAll()
 					.requestMatchers(new AntPathRequestMatcher("/admin/**"))
 					.hasAnyRole("ADMIN","GUEST")
+					.requestMatchers(new AntPathRequestMatcher("/guest/**")).permitAll()
 					.requestMatchers(new AntPathRequestMatcher("/")).permitAll()
 					
 					

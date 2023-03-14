@@ -50,6 +50,14 @@ public class ProductServiceImpl implements ProductService{
 	public void deleteProduct(Long productId) {
 		productRepository.deleteById(productId);
 	}
+
+	@Override
+	public List<ProductDto> searchProducts(String query) {
+		List<Product> products= productRepository.searchProducts(query);
+		return products.stream()
+					.map(ProductMapper::mapToProductDto)
+					.collect(Collectors.toList());
+	}
 	
 	
 
