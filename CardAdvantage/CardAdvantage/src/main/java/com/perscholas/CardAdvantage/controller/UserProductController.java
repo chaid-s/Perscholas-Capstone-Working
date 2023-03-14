@@ -2,6 +2,8 @@ package com.perscholas.CardAdvantage.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -10,6 +12,7 @@ import com.perscholas.CardAdvantage.dto.UserProductDto;
 import com.perscholas.CardAdvantage.service.ProductService;
 import com.perscholas.CardAdvantage.service.UserProductService;
 
+@Controller
 public class UserProductController {
 	
 	private UserProductService userProductService;
@@ -21,13 +24,13 @@ public class UserProductController {
 		this.productService = productService;
 	}
 	
-	@GetMapping("/guest/userproducts")
+	@GetMapping("/admin/userproducts")
 	public String products(Model model) {
 		List<UserProductDto> userproducts = userProductService.findAllUserProducts();
 		model.addAttribute("userproducts", userproducts);
 		List<ProductDto> products = productService.findAllProducts();
 		model.addAttribute("products", products);
-		return "/guest/userproducts";
+		return "admin/userproducts";
 	}
 	
 	@GetMapping("guest/userproducts/newproduct")
