@@ -27,13 +27,13 @@ public class UserProductController {
 		model.addAttribute("userproducts", userproducts);
 		List<ProductDto> products = productService.findAllProducts();
 		model.addAttribute("products", products);
-		return "guest/userproducts";
+		return "/guest/userproducts";
 	}
 	
 	@GetMapping("guest/userproducts/newproduct")
 	public String newProductForm(Model model) {
 		model.addAttribute("userproduct", new UserProductDto());
-		return "admin/create_product";
+		return "/admin/create_product";
 	}
 
 }
