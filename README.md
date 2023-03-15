@@ -1,6 +1,4 @@
 # Perscholas-Capstone-Working
-Capstone workspace for perscholas
-
 Proof of Concept for a ecommerce site for the purposes of selling collectable cards.
 
 Run Sql commands to create an admin user before registering.
