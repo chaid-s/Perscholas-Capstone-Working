@@ -29,4 +29,10 @@ public class UserProductServiceImpl implements UserProductService{
 				.collect(Collectors.toList());
 	}
 
+	@Override
+	public void createUserProduct(UserProductDto userProductDto) {
+		UserProduct userProduct = UserProductMapper.mapToUserProduct(userProductDto);
+		userProductRepository.save(userProduct);
+	}
+
 }

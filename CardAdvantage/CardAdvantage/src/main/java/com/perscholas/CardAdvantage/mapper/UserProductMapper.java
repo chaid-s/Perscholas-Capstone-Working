@@ -10,6 +10,8 @@ public class UserProductMapper {
 				.id(userproduct.getId())
 				.name(userproduct.getName())
 				.price(userproduct.getPrice())
+				.inCart(userproduct.isInCart())
+				.purchased(userproduct.isPurchased())
 				.verificationPicture(userproduct.getVerificationPicture())
 				.build();
 	}
@@ -19,6 +21,8 @@ public class UserProductMapper {
 				.id(userproductdto.getId())
 				.name(userproductdto.getName())
 				.price(userproductdto.getPrice())
+				.inCart(userproductdto.isInCart())
+				.purchased(userproductdto.isPurchased())
 				.verificationPicture(userproductdto.getVerificationPicture())
 				.build();
 	}

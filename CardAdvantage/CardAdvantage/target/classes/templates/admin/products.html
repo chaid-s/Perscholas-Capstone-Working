@@ -41,7 +41,7 @@
 				<td th:text="${product.name}">product name</td>
 				<td th:text="${product.description}">product description</td>
 				<td id="Image-Cell">
-					<img alt="Product Image" th:src="*{'data:image/jpeg;base64,'+{product.productPicture}}" style="width:100px; height:100px;">
+					<img alt="Product Image" th:src="*{'data:image/jpeg;base64,'+{product.productPicture}}" style="width:100px; height:150px;">
 				</td>
 				<td>
 					<a th:href="@{/admin/products/{productId}/edit(productId=${product.id})}" class="btn btn-primary">Edit</a>

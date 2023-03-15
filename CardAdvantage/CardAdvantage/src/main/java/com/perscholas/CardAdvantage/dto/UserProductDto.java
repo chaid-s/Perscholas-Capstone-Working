@@ -23,6 +23,10 @@ public class UserProductDto {
 	@NotEmpty(message ="Listing Description is Required")
 	private String description;
 	
+	private boolean inCart;
+	
+	private boolean purchased;
+	
 	private String verificationPicture;
 
 }

@@ -31,6 +31,8 @@ public class UserProduct {
 	private Long id;
 	private String name;
 	private double price;
+	private boolean inCart;
+	private boolean purchased;
 	@Basic(fetch = FetchType.LAZY)
 	@Column()
     private String verificationPicture;
