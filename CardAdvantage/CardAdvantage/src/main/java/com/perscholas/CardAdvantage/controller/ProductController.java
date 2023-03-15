@@ -56,7 +56,7 @@ public class ProductController {
 	}
 	
 	@GetMapping("/admin/products/{productId}/edit")
-	public String editPostForm(@PathVariable("productId") Long productId, Model model) 
+	public String editProductForm(@PathVariable("productId") Long productId, Model model) 
 	{
 		ProductDto productDto = productService.findProductById(productId);
 		model.addAttribute("product", productDto);

@@ -5,6 +5,10 @@
 
 <div th:replace="guest/header :: header"></div>
 
+<body>
+
+<div th:replace="guest/header :: navbar"></div>
+
 <div class="container">
 	<div class="row col-md-8 offset-md-2">
 		<div class="card">
@@ -27,7 +31,20 @@
 						 th:errors="*{name}"></p>
 					</div>
 					<div class="mb-3">
-						<label class="form-label">Short Description</label>
+						<label class="form-label">Price</label>
+							<input
+								type="number"
+								class="form-control"
+								id="price"
+								placeholder="Enter product price"
+								name="price"
+								th:field="*{price}"
+							/>
+						 <p th:if="${#fields.hasErrors('price')}" class="text-danger"
+						 th:errors="*{price}"></p>
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Description</label>
 						<textarea
 								class="form-control"
 								id="description"
@@ -55,18 +72,6 @@
 			<h1>Listable Products</h1>
 		</div>
 		
-	<div class="row">
-		<div class="col-md-5">
-			<form class="form-inline" th:action="@{/admin/products/search}">
-				<div class="input-group">
-					<input type="text" class="form-control" name="query"/>
-					<span class="input-group-btn">
-						<button class="btn btn-primary" type="submit">Search</button>
-					</span>
-				</div>
-			</form>
-		</div>	
-	</div>
 	<br/>	
 	<table class="table table-striped table-hover table-bordered">
 		<thead class = "table-dark">

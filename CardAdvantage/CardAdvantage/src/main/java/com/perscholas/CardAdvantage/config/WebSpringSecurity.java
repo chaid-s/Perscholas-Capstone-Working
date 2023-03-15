@@ -39,6 +39,8 @@ public class WebSpringSecurity {
 					.requestMatchers(new AntPathRequestMatcher("/guest/**"))
 					.hasAnyRole("GUEST")
 					.requestMatchers(new AntPathRequestMatcher("/")).permitAll()
+					.requestMatchers(new AntPathRequestMatcher("/cart")).permitAll()
+					.requestMatchers(new AntPathRequestMatcher("/styles/css/**")).permitAll()
 					
 		)
 		.formLogin(form -> form
